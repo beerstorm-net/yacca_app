@@ -1,0 +1,2 @@
+json_key_file("/Users/zeus/Documents/BeerStorm/Cats-Pets/AppPublishing/beerstorm_playstore_api-secret.json")
+package_name("net.beerstorm.yacca")

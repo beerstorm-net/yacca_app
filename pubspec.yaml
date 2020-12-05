@@ -1,0 +1,77 @@
+name: yacca_app
+description: Yet Another Cryptocurrency App
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2020.12.08+1
+
+environment:
+  sdk: ">=2.8.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_core: ^0.5.3
+  firebase_auth: ^0.18.4
+  cloud_firestore: ^0.14.4
+  cloud_functions: ^0.7.2
+  firebase_remote_config: ^0.4.3
+  firebase_crashlytics: ^0.2.4
+  firebase_analytics: ^6.3.0
+
+  flutter_bloc: ^6.1.1
+  equatable: ^1.2.5
+
+  hive: ^1.4.4+1
+  hive_flutter: ^0.3.1
+  http: ^0.12.2
+  uuid: ^2.2.2
+  logger: ^0.9.4
+  device_info: ^1.0.0
+
+  jiffy:
+    git: git://github.com/beerstorm-net/jiffy.git
+  progress_dialog:
+    git: git://github.com/beerstorm-net/progress_dialog.git
+  awesome_dialog: ^1.2.1
+  flutter_spinkit: ^4.1.2+1
+
+  pull_to_refresh: ^1.6.3
+  crypto_font_icons: ^0.1.0+1
+  #flutter_icons: ^1.1.0
+
+  charts_flutter: ^0.9.0
+  
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.1+1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.8.1
+  flutter_test:
+    sdk: flutter
+
+# flutter pub run flutter_launcher_icons:main
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/app_icons/logo_icon.jpg"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/app_icons/

@@ -1,0 +1,41 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+
+  before_all do
+    # NB! strangely, both debug and profile should succeed before release!
+    gradle(task: "assembleDebug")
+    gradle(task: "assembleProfile")
+  end
+
+  lane :beta_firebase do
+
+    gradle(task: "assembleRelease")
+    #gradle(
+    #    task: 'assemble',
+    #    build_type: 'Release'
+    #)
+
+    firebase_app_distribution(
+      app: "1:374133621540:android:e483a175c8432a4c5e29b1",
+      groups: "testers",
+      apk_path: "../build/app/outputs/flutter-apk/app-release.apk"
+    )
+  end
+
+end
