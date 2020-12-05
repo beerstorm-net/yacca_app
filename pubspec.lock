@@ -78,48 +78,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0-nullsafety.3"
-  cloud_firestore:
-    dependency: "direct main"
-    description:
-      name: cloud_firestore
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.14.4"
-  cloud_firestore_platform_interface:
-    dependency: transitive
-    description:
-      name: cloud_firestore_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.1"
-  cloud_firestore_web:
-    dependency: transitive
-    description:
-      name: cloud_firestore_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.1+2"
-  cloud_functions:
-    dependency: "direct main"
-    description:
-      name: cloud_functions
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.2"
-  cloud_functions_platform_interface:
-    dependency: transitive
-    description:
-      name: cloud_functions_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.3"
-  cloud_functions_web:
-    dependency: transitive
-    description:
-      name: cloud_functions_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.1"
   collection:
     dependency: transitive
     description:
@@ -281,13 +239,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.4"
-  firebase_remote_config:
-    dependency: "direct main"
-    description:
-      name: firebase_remote_config
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.3"
   flare_dart:
     dependency: transitive
     description:
@@ -380,15 +331,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.1"
-  jiffy:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "26e767e783bd93d011490d0df5251085f8b934fc"
-      url: "git://github.com/beerstorm-net/jiffy.git"
-    source: git
-    version: "3.0.1"
   js:
     dependency: transitive
     description:
