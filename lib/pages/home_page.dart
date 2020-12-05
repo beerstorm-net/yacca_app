@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   List<String>()..add("progress_start"),
                   message: "in progress.."));
               BlocProvider.of<AppNavigatorBloc>(context)
-                  .add(LoadCoinsEvent(limit: "8"));
+                  .add(LoadCoinsEvent(limit: "44"));
             },
             /*onLoading: () {
               BlocProvider.of<AppNavigatorBloc>(context)
@@ -84,26 +84,38 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: Colors.transparent,
                         ),*/
                         title: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
+                              /*Expanded(
+                                  child: Text(
+                                "Rank",
+                                style:
+                                    TextStyle(fontSize: 14, color: Colors.grey),
+                              )),*/
                               Expanded(
                                   child: Text(
                                 "Name",
                                 style:
-                                    TextStyle(fontSize: 16, color: Colors.grey),
+                                    TextStyle(fontSize: 14, color: Colors.grey),
                               )),
                               Expanded(
                                 child: Text(
                                   "Symbol",
                                   style: TextStyle(
-                                      fontSize: 16, color: Colors.grey),
+                                      fontSize: 14, color: Colors.grey),
                                 ),
                               ),
                               Expanded(
                                   child: Text(
                                 "Price (US\$)",
                                 style:
-                                    TextStyle(fontSize: 16, color: Colors.grey),
+                                    TextStyle(fontSize: 14, color: Colors.grey),
+                              )),
+                              Expanded(
+                                  child: Text(
+                                "Change (7d)",
+                                style:
+                                    TextStyle(fontSize: 14, color: Colors.grey),
                               )),
                             ]),
                       ),
@@ -122,8 +134,8 @@ class _HomePageState extends State<HomePage> {
     return Card(
       elevation: 4.0,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0))),
-      margin: EdgeInsets.all(8.0),
+          borderRadius: BorderRadius.all(Radius.circular(4.0))),
+      margin: EdgeInsets.all(4.0),
       child: ListTile(
           contentPadding: EdgeInsets.all(16.0),
           onTap: null,
@@ -132,11 +144,20 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                /*Expanded(
+                  child: Text(
+                    "#${coin.rank}",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),*/
                 Expanded(
                   child: Text(
                     "${coin.name}",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -144,16 +165,22 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   child: Text(
                     "${coin.symbol}",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 18),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     "\$${coin.priceUsd}",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    "${coin.percentChange7d}%",
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
               ],
