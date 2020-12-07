@@ -23,7 +23,7 @@ platform :android do
     gradle(task: "assembleProfile")
   end
 
-  lane :beta_firebase do
+  lane :toFirebase do
 
     gradle(task: "assembleRelease")
     #gradle(

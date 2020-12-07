@@ -5,7 +5,7 @@ description: Yet Another Cryptocurrency App
 # pub.dev using `pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 2020.12.08+2
+version: 2020.12.08+3
 
 environment:
   sdk: ">=2.8.0 <3.0.0"
@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
 
   firebase_core: ^0.5.3
-  firebase_auth: ^0.18.4
+  firebase_auth: ^0.18.4+1
   #cloud_firestore: ^0.14.4
   #cloud_functions: ^0.7.2
   #firebase_remote_config: ^0.4.3

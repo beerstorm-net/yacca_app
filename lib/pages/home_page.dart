@@ -19,6 +19,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   MainRepository _mainRepository;
   List<Coin> _coins = List();
+  int start = 0;
+  int limit = 44;
 
   @override
   void initState() {
@@ -49,7 +51,8 @@ class _HomePageState extends State<HomePage> {
               .add(WarnUserEvent(List<String>()..add("progress_stop")));
           if (state is CoinsLoaded) {
             setState(() {
-              _coins = state.coins;
+              //_coins = state.coins;
+              _coins.addAll(state.coins);
               _refreshController.refreshCompleted();
             });
           }
@@ -58,18 +61,23 @@ class _HomePageState extends State<HomePage> {
           child: SmartRefresher(
             controller: _refreshController,
             enablePullDown: true,
+            enablePullUp: true,
             header: WaterDropMaterialHeader(),
             onRefresh: () {
               BlocProvider.of<AppNavigatorBloc>(context).add(WarnUserEvent(
                   List<String>()..add("progress_start"),
                   message: "in progress.."));
-              BlocProvider.of<AppNavigatorBloc>(context)
-                  .add(LoadCoinsEvent(limit: "44"));
+              BlocProvider.of<AppNavigatorBloc>(context).add(LoadCoinsEvent(
+                  start: start.toString(), limit: limit.toString()));
             },
-            /*onLoading: () {
-              BlocProvider.of<AppNavigatorBloc>(context)
-                  .add(LoadCoinsEvent(limit: "8"));
-            },*/
+            onLoading: () {
+              if (_coins.isNotEmpty) {
+                start += limit;
+                BlocProvider.of<AppNavigatorBloc>(context).add(LoadCoinsEvent(
+                    start: start.toString(), limit: limit.toString()));
+              }
+              //BlocProvider.of<AppNavigatorBloc>(context).add(LoadCoinsEvent(limit: "8"));
+            },
             child: ListView.builder(
               itemCount: _coins.length,
               physics: ClampingScrollPhysics(),
