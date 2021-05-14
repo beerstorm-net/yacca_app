@@ -20,10 +20,10 @@ platform :android do
   before_all do
     # NB! strangely, both debug and profile should succeed before release!
     gradle(task: "assembleDebug")
-    gradle(task: "assembleProfile")
+    # gradle(task: "assembleProfile")
   end
 
-  lane :toFirebase do
+  lane :beta do
 
     gradle(task: "assembleRelease")
     #gradle(
