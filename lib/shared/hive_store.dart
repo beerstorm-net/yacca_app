@@ -54,11 +54,7 @@ class HiveStore {
     return _hiveBox.get("DEVICEPLATFORM") == "android";
   }
 
-  /* // for later use, together with Auth flow
-  AppUser readAppUser() {
-    String dataStr = _hiveBox.get("APP_USER");
-    return CommonUtils.nullSafe(dataStr).isNotEmpty
-        ? AppUser.fromJson(json.decode(dataStr))
-        : null;
-  }*/
+  bool isPhysicalDevice() {
+    return _hiveBox.get("IS_PHYSICAL_DEVICE") == "true";
+  }
 }

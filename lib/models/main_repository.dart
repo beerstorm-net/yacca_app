@@ -15,7 +15,7 @@ class MainRepository {
   HiveStore get hiveStore => _hiveStore;
 
   Future<List<Coin>> apiGetCoins({String start, String limit}) async {
-    List<Coin> coins = List();
+    List<Coin> coins = [];
 
     // https://www.coinlore.com/cryptocurrency-data-api
     // Tickers (All coins)
@@ -33,7 +33,7 @@ class MainRepository {
       reqUrl += reqUrl.contains("?") ? "&" : "?" + "limit=" + limit.trim();
     }
     try {
-      final response = await http.get(reqUrl);
+      final response = await http.get(Uri.parse(reqUrl));
       if (response.statusCode <= 201) {
         Map<String, dynamic> responseMap = json.decode(response.body);
         if (responseMap.containsKey("data")) {

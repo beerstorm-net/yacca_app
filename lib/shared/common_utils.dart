@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:device_info/device_info.dart';
 import 'package:flutter/services.dart';
@@ -60,6 +61,18 @@ class CommonUtils {
   }
 
   static Future<String> getDevicePlatform() async {
+    String devicePlatform = "";
+
+    if (Platform.isIOS) {
+      devicePlatform = "ios";
+    } else if (Platform.isMacOS) {
+      devicePlatform = "macos";
+    } else if (Platform.isAndroid) {
+      devicePlatform = "android";
+    }
+    return devicePlatform;
+  }
+  /*static Future<String> getDevicePlatform() async {
     try {
       IosDeviceInfo iosDeviceInfo = await deviceInfoPlugin.iosInfo;
       if (iosDeviceInfo != null) {
@@ -71,5 +84,5 @@ class CommonUtils {
       return "android";
     }
     return "android"; // default
-  }
+  }*/
 }

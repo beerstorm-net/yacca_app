@@ -17,14 +17,14 @@ class SimpleBlocObserver extends BlocObserver {
   }
 
   @override
-  void onError(Cubit cubit, Object error, StackTrace stacktrace) {
-    CommonUtils.logger.d('onError: $error, $stacktrace');
-    super.onError(cubit, error, stacktrace);
+  void onError(BlocBase bloc, Object error, StackTrace stacktrace) {
+    //CommonUtils.logger.d('onError: $error, $stacktrace');
+    super.onError(bloc, error, stacktrace);
   }
 
   @override
-  void onChange(Cubit cubit, Change change) {
-    CommonUtils.logger.d('onChange: $cubit, $change');
-    super.onChange(cubit, change);
+  void onChange(BlocBase bloc, Change change) {
+    //CommonUtils.logger.d('onChange: $bloc, $change');
+    super.onChange(bloc, change);
   }
 }

@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   MainRepository _mainRepository;
-  List<Coin> _coins = List();
+  List<Coin> _coins = [];
   int start = 0;
   int limit = 44;
 
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     return BlocListener<AppNavigatorBloc, AppNavigatorState>(
         listener: (context, state) {
           BlocProvider.of<AppNavigatorBloc>(context)
-              .add(WarnUserEvent(List<String>()..add("progress_stop")));
+              .add(WarnUserEvent(["progress_stop"]));
           if (state is CoinsLoaded) {
             setState(() {
               //_coins = state.coins;
@@ -64,9 +64,8 @@ class _HomePageState extends State<HomePage> {
             enablePullUp: true,
             header: WaterDropMaterialHeader(),
             onRefresh: () {
-              BlocProvider.of<AppNavigatorBloc>(context).add(WarnUserEvent(
-                  List<String>()..add("progress_start"),
-                  message: "in progress.."));
+              BlocProvider.of<AppNavigatorBloc>(context).add(
+                  WarnUserEvent(["progress_start"], message: "in progress.."));
               BlocProvider.of<AppNavigatorBloc>(context).add(LoadCoinsEvent(
                   start: start.toString(), limit: limit.toString()));
             },
