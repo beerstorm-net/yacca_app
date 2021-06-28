@@ -16,9 +16,9 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## Android
-### android beta_firebase
+### android beta
 ```
-fastlane android beta_firebase
+fastlane android beta
 ```
 
 
